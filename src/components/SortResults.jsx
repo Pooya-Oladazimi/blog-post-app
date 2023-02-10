@@ -17,10 +17,11 @@ class SortResults extends React.Component{
     }
 
     
-    sortBasedOnKey (array, key) {
-        return array.sort(function (a, b) {
-          let x = a[key]; const y = b[key]
-          return ((x < y) ? -1 : ((x > y) ? 1 : 0))
+    sortBasedOnKey (array, property) {
+        return array.sort(function (o1, o2) {
+            let x = o1[property];
+            let y = o2[property];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0))
         })
     }
 
