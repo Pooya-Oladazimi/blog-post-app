@@ -7,7 +7,7 @@ class ResizeablePane extends React.Component{
     constructor(props){
         super(props);
         this.state = ({
-            lastPagePositionX: 0,
+            lastVerticalLinePositionX: 0,
             isResizeOn: false
         });
         this.onMouseDown = this.onMouseDown.bind(this);
@@ -21,7 +21,7 @@ class ResizeablePane extends React.Component{
         if (!targetElement.classList.contains('page-resize-vertical-line')){
           return null;
         }
-        this.lastPagePositionX = event.clientX;
+        this.lastVerticalLinePositionX = event.clientX;
         this.setState({
             isResizeOn: true
         });
@@ -32,16 +32,16 @@ class ResizeablePane extends React.Component{
         if(!this.state.isResizeOn){
           return null;
         }   
-        let addedWidth = (event.clientX - this.lastPagePositionX) / 1;    
+        let addedWidth = (event.clientX - this.lastVerticalLinePositionX) / 1;    
         let pageLeftPane = document.getElementById("page-left-pane");
         let pageRightPane = document.getElementById("page-right-pane");
         let currentWidthLeft = parseInt(pageLeftPane.offsetWidth);    
         let currentWidthRight = parseInt(pageRightPane.offsetWidth);    
         pageLeftPane.style.width = (currentWidthLeft + addedWidth) + "px";
         pageRightPane.style.width = (currentWidthRight - addedWidth) + "px";
-        this.lastPagePositionX = event.clientX;        
+        this.lastVerticalLinePositionX = event.clientX;        
         this.setState({
-            lastPagePositionX: event.clientX
+            lastVerticalLinePositionX: event.clientX
         });
       } 
     

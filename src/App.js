@@ -3,6 +3,7 @@ import Home from './components/Home';
 import {forLoopTypeOne, forLoopTypeTwo, forLoopTypeThree, forLoopTypeFour} from './components/ForLoops';
 import SortResults from './components/SortResults';
 import ResizeablePane from './components/paneResize';
+import Login from './components/Login';
 import './App.css';
 
 
@@ -15,6 +16,8 @@ function App() {
           <Route  path="/forloops" component={forLoopTypeOne} />
           <Route  path="/sort" component={SortResults} />
           <Route  path="/resizePane" component={ResizeablePane} />
+          <Route path={"/login"} component={Login}/>    
+
       </Switch>
       </BrowserRouter>
     </div>
