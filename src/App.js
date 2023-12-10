@@ -5,6 +5,8 @@ import SortResults from './components/SortResults';
 import ResizeablePane from './components/paneResize';
 import Login from './components/Login';
 import './App.css';
+import ClassExamples from './components/classComponentExample';
+import { FunctionComponent } from './components/functionComponentExmple';
 
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           <Route  path="/sort" component={SortResults} />
           <Route  path="/resizePane" component={ResizeablePane} />
           <Route path={"/login"} component={Login}/>    
+          <Route path={"/classExample"} component={ClassExamples}/>  
+          <Route path={"/functionExample"} component={FunctionComponent}/>  
 
       </Switch>
       </BrowserRouter>
